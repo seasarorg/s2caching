@@ -6,7 +6,7 @@
     <version>0.1.0</version>
   </skin>
   <bannerRight>
-    <name>PROJECTNAME</name>
+    <name>s2caching</name>
     <src>http://s2caching.sandbox.seasar.org/banner.jpg</src>
     <href>http://s2caching.sandbox.seasar.org</href>
   </bannerRight>
