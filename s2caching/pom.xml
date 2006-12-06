@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.seasar</groupId>
+  <artifactId>s2caching</artifactId>
+  <name>s2caching</name>
+  <version>1.0-SNAPSHOT</version>
+  <description>s2caching</description>
+  <url>http://s2caching.sandbox.seasar.org/</url>
+  <issueManagement>
+    <system>JIRA</system>
+    <url><![CDATA[https://www.seasar.org/issues/browse/s2caching]]></url>
+  </issueManagement>
+  <inceptionYear>2006</inceptionYear>
+  <scm>
+    <connection>
+      scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/
+    </connection>
+    <developerConnection>
+      scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/
+    </developerConnection>
+    <url>http://svn.seasar.org/browse/?root=sandbox.s2caching</url>
+  </scm>
+  <organization>
+    <name>The Seasar Project</name>
+    <url>http://www.seasar.org/</url>
+  </organization>
+  <build>
+    <defaultGoal>validate</defaultGoal>
+    <pluginManagement>
+      <plugins>
+<!--
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <encoding>UTF-8</encoding>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+        </plugin>
+-->
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <configuration>
+            <updateReleaseInfo>true</updateReleaseInfo>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <id>maven.seasar.org</id>
+      <name>The Seasar Project Maven2 Repository</name>
+      <url>http://maven.seasar.org/maven2</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven.seasar.org</id>
+      <name>The Seasar Project Maven2 Repository</name>
+      <url>http://maven.seasar.org/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>maven.seasar.org</id>
+      <name>The Seasar Project Maven2 Repository</name>
+      <url>scp://maven.seasar.org/home/groups/maven/maven/maven2</url>
+    </repository>
+  </distributionManagement>
+</project>

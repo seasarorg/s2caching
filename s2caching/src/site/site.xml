@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="s2caching">
+  <skin>
+    <groupId>org.seasar.project</groupId>
+    <artifactId>seasar-skin</artifactId>
+    <version>0.1.0</version>
+  </skin>
+  <bannerRight>
+    <name>PROJECTNAME</name>
+    <src>http://s2caching.sandbox.seasar.org/banner.jpg</src>
+    <href>http://s2caching.sandbox.seasar.org</href>
+  </bannerRight>
+  <body>
+    <links>
+      <item name="Top" href="http://www.seasar.org/" />
+      <item name="Home" href="http://s2caching.sandbox.seasar.org/" />
+    </links>
+    <menu ref="reports" />
+  </body>
+</project>
