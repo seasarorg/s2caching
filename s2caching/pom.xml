@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.seasar.caching</groupId>
   <artifactId>s2caching</artifactId>
@@ -11,16 +8,12 @@
   <url>http://s2caching.sandbox.seasar.org/</url>
   <issueManagement>
     <system>JIRA</system>
-    <url><![CDATA[https://www.seasar.org/issues/browse/CACHING]]></url>
+    <url>https://www.seasar.org/issues/browse/CACHING</url>
   </issueManagement>
   <inceptionYear>2006</inceptionYear>
   <scm>
-    <connection>
-      scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/
-    </connection>
-    <developerConnection>
-      scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/
-    </developerConnection>
+    <connection>scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/</connection>
+    <developerConnection>scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/</developerConnection>
     <url>http://svn.seasar.org/browse/?root=sandbox.s2caching</url>
   </scm>
   <organization>
@@ -31,16 +24,6 @@
     <defaultGoal>validate</defaultGoal>
     <pluginManagement>
       <plugins>
-<!--
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <encoding>UTF-8</encoding>
-            <source>1.5</source>
-            <target>1.5</target>
-          </configuration>
-        </plugin>
--->
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <configuration>
@@ -83,7 +66,28 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>aopalliance</groupId>
+      <artifactId>aopalliance</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.container</groupId>
+      <artifactId>s2-extension</artifactId>
+      <version>2.3.14</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.1</version>
+    </dependency>
   </dependencies>
+  
   <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
