@@ -61,7 +61,7 @@ public class CallCacheInterceptor extends AbstractInterceptor {
     
     public Object invoke(MethodInvocation invocation) throws Throwable {
         // 全ての引数がSerializableでないとキャッシュの問い合わせ・追加に意味はない
-        if (!isAllArgumentsSerializable(invocation)) {
+        if (!isAllArgumentsSerializable(invocation) || !isReturnTypeSerializable(invocation)) {
             return invocation.proceed();
         }
         
@@ -77,23 +77,17 @@ public class CallCacheInterceptor extends AbstractInterceptor {
             // cache なし
             Object result = invocation.proceed(); // 例外発生時は上位へそのままスロー、キャッシュされない
             
-            if (result instanceof Serializable) {
-                Element insertElement = new Element(description, (Serializable) result);
-                cache.put(insertElement);
-                Object copiedResult = SerializationUtils.clone((Serializable)result);
-                return copiedResult;
-            } else {
-                logger.warn("return type is not Serializable (cache disable) : " + description);
-                return result;
-            }
+            Element insertElement = new Element(description, (Serializable) result);
+            cache.put(insertElement);
+            return SerializationUtils.clone((Serializable)result);
         }
     }
 
-    /**
-     * @param invocation
-     * @return
-     */
-    private boolean isAllArgumentsSerializable(MethodInvocation invocation) {
+    protected boolean isReturnTypeSerializable(MethodInvocation invocation) {
+        return ((invocation.getMethod().getReturnType()) instanceof Serializable);
+    }
+
+    protected boolean isAllArgumentsSerializable(MethodInvocation invocation) {
         Object[] arguments = invocation.getArguments();
         for (int i=0; i<arguments.length; i++) {
             if (!(arguments[i] instanceof Serializable)) {
