@@ -20,18 +20,17 @@ public class CallDescription implements Serializable {
      * Ç§Å[ÇÒ... orz
      */
     private Object placeHolder = new Object(); // unserializable Ç»Ç‡ÇÃÇàÍÇ¬Ç®Ç¢ÇƒÇ®ÇØÇŒó·äOÇ™Ç≈ÇÈ
-//    private int targetHash;
+    private int targetObject;
     private Class declaredClass;
     private String methodName;
     private Class[] methodArguments;
     private Object[] argument;
     
     public CallDescription( MethodInvocation invocation ) {
-//        Object target = invocation.getThis();
         Method method = invocation.getMethod();
         argument = invocation.getArguments();
- 
-//        targetHash = target.hashCode();
+
+        targetObject = System.identityHashCode(invocation.getThis());
         declaredClass = method.getDeclaringClass();
         methodName = method.getName();
         methodArguments = method.getParameterTypes();

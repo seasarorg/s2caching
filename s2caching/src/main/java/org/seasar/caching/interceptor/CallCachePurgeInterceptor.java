@@ -46,7 +46,7 @@ public class CallCachePurgeInterceptor extends AbstractInterceptor {
 
     public Object invoke(MethodInvocation invocation) throws Throwable {
         cache.removeAll();
-        logger.debug("cache[" + cacheName + "] is full purged.");
+        logger.debug("cache[" + cacheName + "] is purged.");
         return invocation.proceed();
     }
 }

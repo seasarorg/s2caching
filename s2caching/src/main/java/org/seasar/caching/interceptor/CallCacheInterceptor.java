@@ -72,6 +72,7 @@ public class CallCacheInterceptor extends AbstractInterceptor {
             // cache ‚ ‚è
             // can assume originalResult instanceof Serializable.
             Serializable originalResult = element.getValue();
+            
             return SerializationUtils.clone(originalResult);
         } else {
             // cache ‚È‚µ
@@ -79,6 +80,7 @@ public class CallCacheInterceptor extends AbstractInterceptor {
             
             Element insertElement = new Element(description, (Serializable) result);
             cache.put(insertElement);
+            
             return SerializationUtils.clone((Serializable)result);
         }
     }
