@@ -72,6 +72,13 @@
       <version>1.0</version>
     </dependency>
     <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-j2ee_1.4_spec</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>    
+    <dependency>
       <groupId>org.seasar.container</groupId>
       <artifactId>s2-extension</artifactId>
       <version>2.3.14</version>
