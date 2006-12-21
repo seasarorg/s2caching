@@ -19,7 +19,6 @@ public class CallDescription implements Serializable {
      * はされていない (equals()がfalseの2オブジェクトについてhashCode()が異なる可能性がある)
      * うーん... orz
      */
-    private Object placeHolder = new Object(); // unserializable なものを一つおいておけば例外がでる
     private int targetObject;
     private Class declaredClass;
     private String methodName;
@@ -29,7 +28,6 @@ public class CallDescription implements Serializable {
     public CallDescription( MethodInvocation invocation ) {
         Method method = invocation.getMethod();
         argument = invocation.getArguments();
-
         targetObject = System.identityHashCode(invocation.getThis());
         declaredClass = method.getDeclaringClass();
         methodName = method.getName();
@@ -45,7 +43,8 @@ public class CallDescription implements Serializable {
         }
         CallDescription rhs = (CallDescription) object;
         return new EqualsBuilder().append(this.methodArguments, rhs.methodArguments).append(
-                this.declaredClass, rhs.declaredClass).append(this.argument, rhs.argument).append(this.methodName, rhs.methodName).isEquals();
+                this.declaredClass, rhs.declaredClass).append(this.argument, rhs.argument).append(
+                this.methodName, rhs.methodName).append(targetObject, rhs.targetObject).isEquals();
     }
 
     /**
@@ -54,13 +53,14 @@ public class CallDescription implements Serializable {
     public int hashCode() {
         return new HashCodeBuilder(661437325, -495862237).append(
                 this.methodArguments).append(this.declaredClass).append(this.argument)
-                .append(this.methodName).toHashCode();
+                .append(this.methodName).append(targetObject).toHashCode();
     }
 
     /**
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return new ToStringBuilder(this).append(this.methodName).append(this.methodArguments).append(this.argument).toString();
+        return new ToStringBuilder(this).append(this.methodName).append(this.methodArguments)
+                .append(this.argument).append(this.targetObject).toString();
     }
 }
