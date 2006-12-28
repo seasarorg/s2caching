@@ -10,9 +10,4 @@
 		<arg>cacheManager</arg>
 		<arg>"cache-01"</arg>
 	</component>
-
-	<component class="org.seasar.caching.interceptor.CallCachePurgeInterceptor" name="callCachePurge">
-		<arg>cacheManager</arg>
-		<arg>"cache-01"</arg>
-	</component>
 </components>
