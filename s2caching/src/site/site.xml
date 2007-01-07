@@ -15,9 +15,13 @@
       <item name="Top" href="http://www.seasar.org/" />
       <item name="Home" href="http://s2caching.sandbox.seasar.org/" />
     </links>
+<!-- 
     <menu ref="reports" />
+    -->
 	<menu name="S2Caching">
 	  <item name="Introduction" href="index.html"/>
 	</menu>  
+	
+	${reports}
   </body>
 </project>

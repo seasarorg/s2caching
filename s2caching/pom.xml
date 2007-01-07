@@ -3,14 +3,32 @@
   <groupId>org.seasar.caching</groupId>
   <artifactId>s2caching</artifactId>
   <name>s2caching</name>
+  
   <version>0.1-SNAPSHOT</version>
-  <description>s2caching</description>
+  
+  <description>s2caching - AOP based declarative cache library</description>
   <url>http://s2caching.sandbox.seasar.org/</url>
   <issueManagement>
     <system>JIRA</system>
     <url>https://www.seasar.org/issues/browse/CACHING</url>
   </issueManagement>
   <inceptionYear>2006</inceptionYear>
+  <developers>
+  	<developer>
+  		<id>tanigon</id>
+  		<name>TANIGUCHI Hikaru</name>
+  		<email>tanigon2001@gmail.com</email>
+  		<url></url>
+  		<timezone>+9</timezone>
+  	</developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>  
   <scm>
     <connection>scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/</connection>
     <developerConnection>scm:svn:https://www.seasar.org/svn/sandbox/s2caching/trunk/</developerConnection>
@@ -30,8 +48,28 @@
             <updateReleaseInfo>true</updateReleaseInfo>
           </configuration>
         </plugin>
+
+<!-- 
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <configuration>
+            <locales>en,ja</locales>
+            <inputEncoding>UTF-8</inputEncoding>
+            <outputEncoding>UTF-8</outputEncoding>
+          </configuration>
+        </plugin>   
+-->
+
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <tagBase>https://www.seasar.org/svn/sandbox/caching/tags</tagBase>
+          </configuration>
+        </plugin>         
+        
       </plugins>
     </pluginManagement>
+    
     <plugins>
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
