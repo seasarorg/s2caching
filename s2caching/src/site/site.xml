@@ -17,4 +17,7 @@
     </links>
     <menu ref="reports" />
   </body>
+  <menu name="S2Caching">
+    <item name="Introduction" href="index.html"/>
+  </menu>  
 </project>
