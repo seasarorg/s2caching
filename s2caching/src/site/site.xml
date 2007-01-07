@@ -16,8 +16,8 @@
       <item name="Home" href="http://s2caching.sandbox.seasar.org/" />
     </links>
     <menu ref="reports" />
+	<menu name="S2Caching">
+	  <item name="Introduction" href="index.html"/>
+	</menu>  
   </body>
-  <menu name="S2Caching">
-    <item name="Introduction" href="index.html"/>
-  </menu>  
 </project>
