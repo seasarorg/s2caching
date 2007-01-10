@@ -9,16 +9,6 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class CallDescription implements Serializable {
-    /*
-     * 呼び出し対象のオブジェクトは、呼び出しキャッシュするかどうかについて重要な情報である。
-     * そのため、キャッシュのキーの一部を構成する要素として必要である。
-     * しかし、呼び出し対象のオブジェクトをちゃんと識別することができるシリアライズ可能な情報がない。
-     * 対象Objectそのもの、ではシリアライズしたときにむしろおかしなことになるし、SoftRefenrece
-     * などはシリアライズ可能ではない。
-     * hashCode()を使うことにしたが、hashCode()についても 等しいときにはequalである、という定義
-     * はされていない (equals()がfalseの2オブジェクトについてhashCode()が異なる可能性がある)
-     * うーん... orz
-     */
     private int targetObject;
     private Class declaredClass;
     private String methodName;

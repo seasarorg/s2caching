@@ -34,7 +34,7 @@ import org.seasar.framework.aop.interceptors.AbstractInterceptor;
  *   <li>例外がスローされた場合はキャッシュしない.
  * </ul> 
  *  
- * @author taniguchi
+ * @author TANIGUCHI Hikaru
  */
 public class CallCacheInterceptor extends AbstractInterceptor {
     private static final Log logger = LogFactory.getLog(CallCacheInterceptor.class);
@@ -69,13 +69,10 @@ public class CallCacheInterceptor extends AbstractInterceptor {
         CallDescription description = new CallDescription(invocation);
         Element element = cache.get(description);
         if (element != null) {
-            // cache あり
-            // can assume originalResult instanceof Serializable.
             Serializable originalResult = element.getValue();
             
             return SerializationUtils.clone(originalResult);
         } else {
-            // cache なし
             Object result = invocation.proceed(); // 例外発生時は上位へそのままスロー、キャッシュされない
             
             Element insertElement = new Element(description, (Serializable) result);
