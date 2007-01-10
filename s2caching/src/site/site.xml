@@ -20,6 +20,7 @@
     -->
 	<menu name="S2Caching">
 	  <item name="Introduction" href="index.html"/>
+	  <item name="Download" href="download.html"/>	  
 	</menu>  
 	
 	${reports}
