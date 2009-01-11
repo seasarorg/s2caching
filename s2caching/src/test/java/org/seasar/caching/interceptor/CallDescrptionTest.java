@@ -25,7 +25,7 @@ public class CallDescrptionTest extends S2TestCase {
         }
     }
     
-    public void testシリアライズ復元性() throws IOException, ClassNotFoundException {
+    public void test繧ｷ繝ｪ繧｢繝ｩ繧､繧ｺ蠕ｩ蜈�諤ｧ() throws IOException, ClassNotFoundException {
         Pointcut pointcut = new PointcutImpl(new String[]{"setTime"});
         DebugInterceptor debugInterceptor = new DebugInterceptor();
         Aspect aspect = new AspectImpl(debugInterceptor, pointcut);

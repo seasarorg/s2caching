@@ -1,4 +1,9 @@
-#Thu Jan 11 00:36:04 JST 2007
+#Sun Jan 11 14:52:24 JST 2009
 eclipse.preferences.version=1
+encoding//src/main/java/org/seasar/caching/interceptor/CallCacheInterceptor.java=utf-8
+encoding//src/main/java/org/seasar/caching/interceptor/CallCachePurgeInterceptor.java=utf-8
+encoding//src/main/java/org/seasar/caching/interceptor/CallDescription.java=utf-8
 encoding//src/site/apt/download.apt=utf-8
 encoding//src/site/apt/index.apt=utf-8
+encoding//src/test/java/org/seasar/caching/interceptor/CallCacheInterceptorTest.java=utf-8
+encoding//src/test/java/org/seasar/caching/interceptor/CallDescrptionTest.java=utf-8

@@ -29,24 +29,24 @@ import org.apache.commons.logging.LogFactory;
 import org.seasar.framework.aop.interceptors.AbstractInterceptor;
 
 /**
- * ƒƒ\ƒbƒh‚É‘Î‚·‚éŒÄ‚Ño‚µ‚ğƒLƒƒƒbƒVƒ…‚·‚éInterceptor.
+ * ãƒ¡ã‚½ãƒƒãƒ‰ã«å¯¾ã™ã‚‹å‘¼ã³å‡ºã—ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã™ã‚‹Interceptor.
  * 
- * Dao‚É‘Î‚µ‚Ä“K—p‚·‚éê‡AˆÈ‰º‚Ì‚æ‚¤‚É—p‚¢‚é.
+ * Daoã«å¯¾ã—ã¦é©ç”¨ã™ã‚‹å ´åˆã€ä»¥ä¸‹ã®ã‚ˆã†ã«ç”¨ã„ã‚‹.
  * <ul>
- *  <li>get‚âfind‚È‚Ç‚Ìæ“¾Œnƒƒ\ƒbƒh‚É CallCacheInterceptor‚ğƒZƒbƒg‚·‚é
- *  <li>update,insert,delete,set‚È‚Ç‚ÌXVŒnƒƒ\ƒbƒh‚É CallCachePurgeInterceptor‚ğƒZƒbƒg‚·‚é
- *  <li>—¼Interceptor‚ª“¯‚¶ƒLƒƒƒbƒVƒ…—Ìˆæ‚ğŒ©‚És‚­‚æ‚¤‚É ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì‘æ“ñˆø”‚ğ“™‚µ‚¢ƒL[•¶š—ñ‚É‚·‚é
- *  <li>‚¨‚È‚¶‚­“¯ˆê‚ÌCacheManager‚ğQÆ‚É‚¢‚­‚æ‚¤‚É‘æˆêˆø”‚ğ“™‚µ‚¢‚à‚Ì‚É‚·‚é
+ *  <li>getã‚„findãªã©ã®å–å¾—ç³»ãƒ¡ã‚½ãƒƒãƒ‰ã« CallCacheInterceptorã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+ *  <li>update,insert,delete,setãªã©ã®æ›´æ–°ç³»ãƒ¡ã‚½ãƒƒãƒ‰ã« CallCachePurgeInterceptorã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+ *  <li>ä¸¡InterceptorãŒåŒã˜ã‚­ãƒ£ãƒƒã‚·ãƒ¥é ˜åŸŸã‚’è¦‹ã«è¡Œãã‚ˆã†ã« ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®ç¬¬äºŒå¼•æ•°ã‚’ç­‰ã—ã„ã‚­ãƒ¼æ–‡å­—åˆ—ã«ã™ã‚‹
+ *  <li>ãŠãªã˜ãåŒä¸€ã®CacheManagerã‚’å‚ç…§ã«ã„ãã‚ˆã†ã«ç¬¬ä¸€å¼•æ•°ã‚’ç­‰ã—ã„ã‚‚ã®ã«ã™ã‚‹
  * </ul>
  *
- * “Á‚ÉˆÈ‰º‚Ì“_‚É’ˆÓ‚·‚é•K—v‚ª‚ ‚é
+ * ç‰¹ã«ä»¥ä¸‹ã®ç‚¹ã«æ³¨æ„ã™ã‚‹å¿…è¦ãŒã‚ã‚‹
  * <ul>
- *  <li><b>ƒCƒ“ƒ^[ƒZƒvƒgæ‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ÍƒLƒƒƒbƒVƒ…—Ìˆæ‚É‘Î‚µ‚Äsingleton‚Å‚È‚­‚Ä‚Í‚È‚ç‚È‚¢.</b>
- *  ƒLƒƒƒbƒVƒ…‚ÉŠi”[‚³‚ê‚Ä‚¢‚éƒL[‚ÉA‘ÎÛƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¯•Ê‚·‚é‹@”\‚ª‚È‚­Aƒƒ\ƒbƒh‚ÌƒVƒOƒlƒ`ƒƒ‚Æˆø”
- *  ‚ÌƒZƒbƒg‚Ì‚İ‚ğƒL[‚Æ‚µ‚Ä‚¢‚é‚½‚ß.
- *   <li>ƒƒ\ƒbƒh‚Ìˆø”‚Í‘S‚ÄSerializable‚Å‚È‚¢ê‡‚ÍƒLƒƒƒbƒVƒ…‚µ‚È‚¢.
- *   <li>ƒƒ\ƒbƒh‚Ì–ß‚è’lŒ^‚ªSerializable‚Å‚È‚¢ê‡‚ÍƒLƒƒƒbƒVƒ…‚µ‚È‚¢.
- *   <li>—áŠO‚ªƒXƒ[‚³‚ê‚½ê‡‚ÍƒLƒƒƒbƒVƒ…‚µ‚È‚¢.
+ *  <li><b>ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ãƒˆå…ˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯ã‚­ãƒ£ãƒƒã‚·ãƒ¥é ˜åŸŸã«å¯¾ã—ã¦singletonã§ãªãã¦ã¯ãªã‚‰ãªã„.</b>
+ *  ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã«æ ¼ç´ã•ã‚Œã¦ã„ã‚‹ã‚­ãƒ¼ã«ã€å¯¾è±¡ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è­˜åˆ¥ã™ã‚‹æ©Ÿèƒ½ãŒãªãã€ãƒ¡ã‚½ãƒƒãƒ‰ã®ã‚·ã‚°ãƒãƒãƒ£ã¨å¼•æ•°
+ *  ã®ã‚»ãƒƒãƒˆã®ã¿ã‚’ã‚­ãƒ¼ã¨ã—ã¦ã„ã‚‹ãŸã‚.
+ *   <li>ãƒ¡ã‚½ãƒƒãƒ‰ã®å¼•æ•°ã¯å…¨ã¦Serializableã§ãªã„å ´åˆã¯ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã—ãªã„.
+ *   <li>ãƒ¡ã‚½ãƒƒãƒ‰ã®æˆ»ã‚Šå€¤å‹ãŒSerializableã§ãªã„å ´åˆã¯ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã—ãªã„.
+ *   <li>ä¾‹å¤–ãŒã‚¹ãƒ­ãƒ¼ã•ã‚ŒãŸå ´åˆã¯ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã—ãªã„.
  * </ul> 
  *  
  * @author TANIGUCHI Hikaru
@@ -61,8 +61,8 @@ public class CallCacheInterceptor extends AbstractInterceptor {
     /**
      * constructor
      * 
-     * @param cacheManager ehCache‚ÌƒLƒƒƒbƒVƒ…ƒ}ƒl[ƒWƒƒ
-     * @param cacheName ƒLƒƒƒbƒVƒ…–¼Ì(ƒLƒƒƒbƒVƒ…ƒ}ƒl[ƒWƒƒ‚É‘Î‚·‚éƒL[)
+     * @param cacheManager ehCacheã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãƒãƒãƒ¼ã‚¸ãƒ£
+     * @param cacheName ã‚­ãƒ£ãƒƒã‚·ãƒ¥åç§°(ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãƒãƒãƒ¼ã‚¸ãƒ£ã«å¯¾ã™ã‚‹ã‚­ãƒ¼)
      * @throws CacheException
      */
     public CallCacheInterceptor(CacheManager cacheManager, String cacheName) throws CacheException {
@@ -75,12 +75,12 @@ public class CallCacheInterceptor extends AbstractInterceptor {
     }
     
     public Object invoke(MethodInvocation invocation) throws Throwable {
-        // ‘S‚Ä‚Ìˆø”‚ªSerializable‚Å‚È‚¢‚ÆƒLƒƒƒbƒVƒ…‚Ì–â‚¢‡‚í‚¹E’Ç‰Á‚ÉˆÓ–¡‚Í‚È‚¢
+        // å…¨ã¦ã®å¼•æ•°ãŒSerializableã§ãªã„ã¨ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®å•ã„åˆã‚ã›ãƒ»è¿½åŠ ã«æ„å‘³ã¯ãªã„
         if (!isAllArgumentsSerializable(invocation) || !isReturnTypeSerializable(invocation)) {
             return invocation.proceed();
         }
         
-        // ˆø”‚Í‘S‚ÄSerializable‚È‚Ì‚Å CallDescription‚ª¶¬‰Â”\BƒLƒƒƒbƒVƒ…–â‚¢‡‚í‚¹
+        // å¼•æ•°ã¯å…¨ã¦Serializableãªã®ã§ CallDescriptionãŒç”Ÿæˆå¯èƒ½ã€‚ã‚­ãƒ£ãƒƒã‚·ãƒ¥å•ã„åˆã‚ã›
         CallDescription description = new CallDescription(invocation);
         Element element = cache.get(description);
         if (element != null) {
@@ -88,7 +88,7 @@ public class CallCacheInterceptor extends AbstractInterceptor {
             
             return SerializationUtils.clone(originalResult);
         } else {
-            Object result = invocation.proceed(); // —áŠO”­¶‚ÍãˆÊ‚Ö‚»‚Ì‚Ü‚ÜƒXƒ[AƒLƒƒƒbƒVƒ…‚³‚ê‚È‚¢
+            Object result = invocation.proceed(); // ä¾‹å¤–ç™ºç”Ÿæ™‚ã¯ä¸Šä½ã¸ãã®ã¾ã¾ã‚¹ãƒ­ãƒ¼ã€ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã•ã‚Œãªã„
             
             Element insertElement = new Element(description, (Serializable) result);
             cache.put(insertElement);

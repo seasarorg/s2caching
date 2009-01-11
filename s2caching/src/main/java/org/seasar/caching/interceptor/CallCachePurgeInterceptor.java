@@ -25,13 +25,13 @@ import org.apache.commons.logging.LogFactory;
 import org.seasar.framework.aop.interceptors.AbstractInterceptor;
 
 /**
- * CallCacheInterceptor�̃L���b�V�����p�[�W���邽�߂Ɏg�p����interceptor.<br />
- * Dao�ɑ΂��ēK�p����ꍇ�A�ȉ��̂悤�ɗp����.
+ * CallCacheInterceptorのキャッシュをパージするために使用するinterceptor.<br />
+ * Daoに対して適用する場合、以下のように用いる.
  * <ul>
- *  <li>get��find�Ȃǂ̎擾�n���\�b�h�� CallCacheInterceptor���Z�b�g����
- *  <li>update,insert,delete,set�Ȃǂ̍X�V�n���\�b�h�� CallCachePurgeInterceptor���Z�b�g����
- *  <li>��Interceptor�������L���b�V���̈�����ɍs���悤�� �R���X�g���N�^�̑������𓙂����L�[������ɂ���
- *  <li>���Ȃ��������CacheManager���Q�Ƃɂ����悤�ɑ������𓙂������̂ɂ���
+ *  <li>getやfindなどの取得系メソッドに CallCacheInterceptorをセットする
+ *  <li>update,insert,delete,setなどの更新系メソッドに CallCachePurgeInterceptorをセットする
+ *  <li>両Interceptorが同じキャッシュ領域を見に行くように コンストラクタの第二引数を等しいキー文字列にする
+ *  <li>おなじく同一のCacheManagerを参照にいくように第一引数を等しいものにする
  * </ul>
  * 
  * @author taniguchi
@@ -46,8 +46,8 @@ public class CallCachePurgeInterceptor extends AbstractInterceptor {
     /**
      * constructor
      * 
-     * @param cacheManager ehCache�̃L���b�V���}�l�[�W��
-     * @param cacheName �L���b�V������(�L���b�V���}�l�[�W���ɑ΂���L�[)
+     * @param cacheManager ehCacheのキャッシュマネージャ
+     * @param cacheName キャッシュ名称(キャッシュマネージャに対するキー)
      * @throws CacheException
      */
     public CallCachePurgeInterceptor(CacheManager cacheManager, String cacheName) throws CacheException {

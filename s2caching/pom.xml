@@ -24,9 +24,16 @@
 			<url></url>
 			<timezone>+9</timezone>
 		</developer>
+		<developer>
+			<id>shootaroo</id>
+			<name>shootaroo</name>
+			<email>shotaro.tsubouchi@gmail.com</email>
+			<url></url>
+			<timezone>+9</timezone>
+		</developer>		
 	</developers>
 	<licenses>
-		<license>
+		<license> 
 			<name>The Apache Software License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 			<distribution>repo</distribution>
@@ -50,6 +57,15 @@
 		<defaultGoal>validate</defaultGoal>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.5</source>
+						<target>1.5</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<configuration>
@@ -129,7 +145,7 @@
 		<dependency>
 			<groupId>org.seasar.container</groupId>
 			<artifactId>s2-extension</artifactId>
-			<version>2.3.14</version>
+			<version>2.3.23</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
