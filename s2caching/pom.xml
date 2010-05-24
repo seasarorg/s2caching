@@ -175,7 +175,7 @@
 				The Seasar Foundation Maven2 Snapshot Repository
 			</name>
 			<url>
-				dav:https://maven.seasar.org/home/groups/sandbox/s2caching/maven/maven2-snapshot
+				dav:https://maven.seasar.org/maven/maven2-snapshot
 			</url>
 		</snapshotRepository>
 		<site>
