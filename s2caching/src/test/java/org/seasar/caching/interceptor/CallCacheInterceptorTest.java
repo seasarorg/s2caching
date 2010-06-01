@@ -13,6 +13,10 @@ public class CallCacheInterceptorTest extends S2TestCase {
     public static class TestClass {
         public int hoge = 0;
         
+        public long getLong(long value) {
+        	return value;
+        }
+        
         public String getValue() {
             hoge=hoge+1;
             return "value";
@@ -29,6 +33,25 @@ public class CallCacheInterceptorTest extends S2TestCase {
         include("CallCacheInterceptorTest.dicon");
     }
 
+    /* NOTE:
+     * [CACHING-9] 
+     * 
+     * ehcache-1.2.0 では long型の戻り値のメソッドについてdiskflushされる際に
+     * ClassNotFoundが出た…ということで ehcacheのバージョンをあげたら直る。
+     * 1.6.2では動いた。一見意味不明なテストだが、
+     * 再帰テストのために以下テストを残しておく。
+     */
+    public void testLongPrimitiveTypeHandling() throws Exception {
+    	TestClass mock = createCachedMock();
+    	
+    	for (int i=0; i<10000; i++) {
+    		assertEquals(i, mock.getLong(i));
+    	}
+    	for (int i=0; i<10000; i++) {
+    		assertEquals(i, mock.getLong(i));
+    	}
+    }
+    
     public void testSameNameDifferentSignature() throws IOException, ClassNotFoundException {
         TestClass mock = createCachedMock();
 
@@ -78,7 +101,7 @@ public class CallCacheInterceptorTest extends S2TestCase {
     }
 
 	private TestClass createCachedMock() {
-		Pointcut pointcut = new PointcutImpl(new String[]{"getValue"});
+		Pointcut pointcut = new PointcutImpl(new String[]{"getValue", "getLong"});
         CallCacheInterceptor interceptor = (CallCacheInterceptor) getComponent("callCache");
         Aspect aspect = new AspectImpl(interceptor, pointcut);
         AopProxy aopProxy = new AopProxy(TestClass.class, new Aspect[]{aspect});
