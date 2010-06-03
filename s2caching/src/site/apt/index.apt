@@ -19,10 +19,11 @@ S2Cachingの利用条件
 
   S2Cachingは以下の環境でのみテストされています。
 
-    * S2Containerは <<<2.3.14>>> でのみテストされています
+    * S2Containerは <<<2.4.34>>> でのみテストされています
     
-    * S2Container 2.4系では動作確認を行っていません。動作するかどうかも保証できません。
-      なお、近日中には動作するようにする予定です。
+    * S2Container 2.3系でも動作します。customizerがパッケージに含まれるために依存しているだけです。
+    
+    * ehCache 1.6.2でのみテストされています。2.1.0などほかのバージョンでも動作するかもしれません。
     
   S2Cachingを適用するには以下の条件を満たす必要があります
 
@@ -31,7 +32,7 @@ S2Cachingの利用条件
     * 適用先メソッドの引数の型すべてが <Serializable> であること
 
 
-適用のステップ
+適用のステップ(Interceptor編)
 
   [[1]] <ehcache.xml> を記述します。実行時にehCacheによって読み出されます
 
@@ -52,6 +53,21 @@ S2Cachingの利用条件
         これで、callCacheという名前でinterceptorを参照できます
         
   [[3]] 適用先のメソッドに適用します。これはTraceInterceptorなど他のものと同じです
+
+適用のステップ(Customizer編）
+
+  S2Container 2.4からはSMART-Deployが使えます。S2Cachingでも、Customizerを提供しており、アノテーションのついたメソッドに対してキャッシュを適用することができます。
+
+  [[1]] ehcache.xmlの設定、およびInterceptorの定義は必要です。上記適用のステップ(Interceptor編)を参考にしながら、Interceptorの定義をしておいてください。  
+
+  [[2]] 適用先のクラスのメソッドに、CallCacheアノテーションを付けます。componentNameには CallCacheInterceptorのコンポーネント名を記入します。
+  
++-----+
+  @CallCache(componentName="callCache")
+  public String calculateSomething(String condition) { ....
++-----+
+
+  [[3]] logicCustomizerなど、意図するカスタマイザに CallCacheCustomizer を設定します。
 
 キャッシュのされ方
 
