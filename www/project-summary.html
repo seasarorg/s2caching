@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <meta http-equiv="Content-Language" content="en" /> 
 <meta http-equiv="Content-Style-Type" content="text/css" /> 
-<title>s2caching - Source Repository</title>
+<title>s2caching - Project Summary</title>
 <link rel="stylesheet" type="text/css" href="http://www.seasar.org/theme/main.css" media="screen,projection" />
 <link rel="stylesheet" type="text/css" href="http://www.seasar.org/theme/print.css" media="print" />
 <link href="./css/maven-base.css" type="text/css" rel="stylesheet" media="screen" />
@@ -95,11 +95,11 @@
             
       
             
+            
+            
       
             
       
-            
-            
               
             <li class="expanded">
               <a href="project-info.html">Project Information</a>
@@ -134,7 +134,7 @@
         </li>
                   
     <li class="none">
-              <a href="project-summary.html">Project Summary</a>
+              <strong>Project Summary</strong>
         </li>
                   
     <li class="none">
@@ -142,7 +142,7 @@
         </li>
                   
     <li class="none">
-              <strong>Source Repository</strong>
+              <a href="source-repository.html">Source Repository</a>
         </li>
               </ul>
         </li>
@@ -162,39 +162,51 @@
 <div id="contents_center">
 
 <div id="article">
-<div class="section"><h2>Overview</h2>
-This project uses <a class="externalLink" href="http://subversion.tigris.org/">Subversion</a> to manage its source code. Instructions on Subversion use can be found at <a class="externalLink" href="http://svnbook.red-bean.com/">http://svnbook.red-bean.com/</a>.</div>
-<div class="section"><h2>Web Access</h2>
-<p>The following is a link to the online source repository.</p>
-<div class="source"><pre><a class="externalLink" href="http://svn.seasar.org/browse/?root=sandbox.s2caching">http://svn.seasar.org/browse/?root=sandbox.s2caching</a></pre>
+<div class="section"><h2>Project Summary</h2>
+<div class="section"><h3>Project Information</h3>
+<table class="bodyTable"><tr class="a"><th>Field</th>
+<th>Value</th>
+</tr>
+<tr class="b"><td>Name</td>
+<td>s2caching</td>
+</tr>
+<tr class="a"><td>Description</td>
+<td>s2caching - AOP based declarative cache library</td>
+</tr>
+<tr class="b"><td>Homepage</td>
+<td><a class="externalLink" href="http://s2caching.sandbox.seasar.org/">http://s2caching.sandbox.seasar.org/</a></td>
+</tr>
+</table>
 </div>
+<div class="section"><h3>Project Organization</h3>
+<table class="bodyTable"><tr class="a"><th>Field</th>
+<th>Value</th>
+</tr>
+<tr class="b"><td>Name</td>
+<td>The Seasar Project</td>
+</tr>
+<tr class="a"><td>URL</td>
+<td><a class="externalLink" href="http://www.seasar.org/">http://www.seasar.org/</a></td>
+</tr>
+</table>
 </div>
-<div class="section"><h2>Anonymous access</h2>
-<p>The source can be checked out anonymously from SVN with this command:</p>
-<div class="source"><pre>$ svn checkout https://www.seasar.org/svn/sandbox/s2caching/trunk/ s2caching</pre>
-</div>
-</div>
-<div class="section"><h2>Developer access</h2>
-<p>Everyone can access the Subversion repository via HTTP, but Committers must checkout the Subversion repository via HTTPS.</p>
-<div class="source"><pre>$ svn checkout https://www.seasar.org/svn/sandbox/s2caching/trunk/ s2caching</pre>
-</div>
-<p>To commit changes to the repository, execute the following command to commit your changes (svn will prompt you for your password)</p>
-<div class="source"><pre>$ svn commit --username your-username -m &quot;A message&quot;</pre>
-</div>
-</div>
-<div class="section"><h2>Access from behind a firewall</h2>
-<p>For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion repository, you can try to access it via the developer connection:</p>
-<div class="source"><pre>$ svn checkout https://www.seasar.org/svn/sandbox/s2caching/trunk/ s2caching</pre>
-</div>
-</div>
-<div class="section"><h2>Access through a proxy</h2>
-<p>The Subversion client can go through a proxy, if you configure it to do so. First, edit your &quot;servers&quot; configuration file to indicate which proxy to use. The file's location depends on your operating system. On Linux or Unix it is located in the directory &quot;~/.subversion&quot;. On Windows it is in &quot;%APPDATA%\Subversion&quot;. (Try &quot;echo %APPDATA%&quot;, note this is a hidden directory.)</p>
-<p>There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.</p>
-<p>Example: Edit the 'servers' file and add something like:</p>
-<div class="source"><pre>[global]
-http-proxy-host = your.proxy.name
-http-proxy-port = 3128
-</pre>
+<div class="section"><h3>Build Information</h3>
+<table class="bodyTable"><tr class="b"><th>Field</th>
+<th>Value</th>
+</tr>
+<tr class="a"><td>GroupId</td>
+<td>org.seasar.caching</td>
+</tr>
+<tr class="b"><td>ArtifactId</td>
+<td>s2caching</td>
+</tr>
+<tr class="a"><td>Version</td>
+<td>0.1-SNAPSHOT</td>
+</tr>
+<tr class="b"><td>Type</td>
+<td>jar</td>
+</tr>
+</table>
 </div>
 </div>
 

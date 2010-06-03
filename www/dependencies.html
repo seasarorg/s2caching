@@ -94,6 +94,12 @@
       
             
       
+            
+      
+            
+      
+            
+      
               
             <li class="expanded">
               <a href="project-info.html">Project Information</a>
@@ -116,7 +122,19 @@
         </li>
                   
     <li class="none">
+              <a href="plugin-management.html">Plugin Management</a>
+        </li>
+                  
+    <li class="none">
               <a href="license.html">Project License</a>
+        </li>
+                  
+    <li class="none">
+              <a href="plugins.html">Project Plugins</a>
+        </li>
+                  
+    <li class="none">
+              <a href="project-summary.html">Project Summary</a>
         </li>
                   
     <li class="none">
@@ -144,27 +162,501 @@
 <div id="contents_center">
 
 <div id="article">
-<div class="section"><h2>Project Dependencies</h2><table class="bodyTable"><caption>The following is a list of dependencies for this project. These dependencies are required to compile and run the application:</caption><tr class="a"><th>GroupId</th><th>ArtifactId</th><th>Version</th><th>Description</th><th>URL</th></tr><tr class="b"><td>aopalliance</td><td>aopalliance</td><td>1.0</td><td>AOP Alliance</td><td>-</td></tr><tr class="a"><td>junit</td><td>junit</td><td>3.8.1</td><td>-</td><td>-</td></tr><tr class="b"><td>org.seasar.container</td><td>s2-extension</td><td>2.3.14</td><td>DI Container with AOP</td><td><a href="http://s2container.seasar.org/">http://s2container.seasar.org/</a></td></tr><tr class="a"><td>org.apache.geronimo.specs</td><td>geronimo-j2ee_1.4_spec</td><td>1.0</td><td>-</td><td>-</td></tr><tr class="b"><td>net.sf.ehcache</td><td>ehcache</td><td>1.2</td><td>ehcache is a pure Java, in-process cache with the following features:
-
-   1. Fast.
-   2. Simple.
-   3. Multiple eviction policies: LRU, LFU and FIFO.
-   4. Caches can be in memory or on disk.
-   5. Disk Stores can be persistent between VM restarts.
-   6. Distributed caching using multicast and RMI, with a pluggable API.
-   7. Cache and CacheManager listeners
-   8. Supports multiple Caches per CacheManager, and multiple CacheManagers per application.
-   9. Acts as a pluggable cache for Hibernate 3.1, 3 and 2.1.
-   10. Small foot print. Both in terms of size and memory requirements.
-   11. Minimal dependencies apart from J2SE.
-   12. Fully documented. See the online Documentation and the online JavaDoc.
-   13. Comprehensive Test Coverage. See the clover test report.
-   14. Available under the Apache 1.1 license. EHCache's copyright and licensing has been reviewed and approved by the Apache Software Foundation, making EHCache suitable for use in Apache projects.
-   15. Production tested. EHCache is used on a large and very busy eCommerce site.
-   16. Web caching, pull-through caches and other common caching implementations are provided in the ehcache-constructs module.</td><td><a href="http://ehcache.sf.net">http://ehcache.sf.net</a></td></tr><tr class="a"><td>commons-lang</td><td>commons-lang</td><td>2.1</td><td>Commons.Lang, a package of Java utility classes for the
+<div class="section"><h2>Project Dependencies</h2>
+<div class="section"><h3>compile</h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table class="bodyTable"><tr class="a"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="b"><td>aopalliance</td>
+<td><a class="externalLink" href="http://aopalliance.sourceforge.net">aopalliance</a></td>
+<td>1.0</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>commons-lang</td>
+<td>commons-lang</td>
+<td>2.1</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>net.sf.ehcache</td>
+<td><a class="externalLink" href="http://ehcache.sf.net/ehcache">ehcache</a></td>
+<td>1.6.2</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>org.seasar.container</td>
+<td><a class="externalLink" href="http://s2container.seasar.org/">s2-extension</a></td>
+<td>2.4.34</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+<div class="section"><h3>test</h3>
+<p>The following is a list of test dependencies for this project. These dependencies are only required to compile and run unit tests for the application:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>junit</td>
+<td><a class="externalLink" href="http://junit.org">junit</a></td>
+<td>3.8.1</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+<div class="section"><h3>provided</h3>
+<p>The following is a list of provided dependencies for this project. These dependencies are required to compile the application, but should be provided by default when using the library:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>org.apache.geronimo.specs</td>
+<td>geronimo-j2ee_1.4_spec</td>
+<td>1.0</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section"><h2>Project Transitive Dependencies</h2>
+<p>The following is a list of transitive dependencies for this project. Transitive dependencies are the dependencies of the project dependencies.</p>
+<div class="section"><h3>compile</h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>commons-logging</td>
+<td>commons-logging</td>
+<td>1.1</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>jboss</td>
+<td><a class="externalLink" href="http://www.jboss.org/products/javassist">javassist</a></td>
+<td>3.4.ga</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>ognl</td>
+<td>ognl</td>
+<td>2.6.9-patch-20070908</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>org.apache.poi</td>
+<td><a class="externalLink" href="http://jakarta.apache.org/poi/">poi</a></td>
+<td>3.0-FINAL</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>org.seasar.container</td>
+<td><a class="externalLink" href="http://s2container.seasar.org/">s2-framework</a></td>
+<td>2.4.34</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section"><h2>Project Dependency Graph</h2>
+<script language="javascript" type="text/javascript">
+      function toggleDependencyDetail( divId, imgId )
+      {
+        var div = document.getElementById( divId );
+        var img = document.getElementById( imgId );
+        if( div.style.display == '' )
+        {
+          div.style.display = 'none';
+          img.src='./images/icon_info_sml.gif';
+        }
+        else
+        {
+          div.style.display = '';
+          img.src='./images/close.gif';
+        }
+      }
+</script>
+<div class="section"><h3>Dependency Tree</h3>
+<ul><li>org.seasar.caching:s2caching:jar:0.1-SNAPSHOT <img id="_1786614012" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1075872192', '_1786614012' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1075872192" style="display:none"><table class="bodyTable"><tr class="b"><th>s2caching</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>s2caching - AOP based declarative cache library</p>
+<p><b>URL: </b><a class="externalLink" href="http://s2caching.sandbox.seasar.org/">http://s2caching.sandbox.seasar.org/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>junit:junit:jar:3.8.1 (test) <img id="_1251148693" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1423285564', '_1251148693' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1423285564" style="display:none"><table class="bodyTable"><tr class="b"><th>JUnit</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.</p>
+<p><b>URL: </b><a class="externalLink" href="http://junit.org">http://junit.org</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/cpl1.0.txt">Common Public License Version 1.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>aopalliance:aopalliance:jar:1.0 (compile) <img id="_1333992200" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_397218105', '_1333992200' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_397218105" style="display:none"><table class="bodyTable"><tr class="b"><th>AOP alliance</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>AOP Alliance</p>
+<p><b>URL: </b><a class="externalLink" href="http://aopalliance.sourceforge.net">http://aopalliance.sourceforge.net</a></p>
+<p><b>Project License: </b>Public Domain</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>org.apache.geronimo.specs:geronimo-j2ee_1.4_spec:jar:1.0 (provided) <img id="_260166398" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_84568735', '_260166398' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_84568735" style="display:none"><table class="bodyTable"><tr class="b"><th>Unnamed - org.apache.geronimo.specs:geronimo-j2ee_1.4_spec:jar:1.0</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>org.seasar.container:s2-extension:jar:2.4.34 (compile) <img id="_1121662346" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_80828785', '_1121662346' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_80828785" style="display:none"><table class="bodyTable"><tr class="b"><th>Seasar2 Extension</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>DI Container with AOP</p>
+<p><b>URL: </b><a class="externalLink" href="http://s2container.seasar.org/">http://s2container.seasar.org/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>org.seasar.container:s2-framework:jar:2.4.34 (compile) <img id="_27168744" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_206876714', '_27168744' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_206876714" style="display:none"><table class="bodyTable"><tr class="b"><th>Seasar2 Framework</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>DI Container with AOP</p>
+<p><b>URL: </b><a class="externalLink" href="http://s2container.seasar.org/">http://s2container.seasar.org/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>aopalliance:aopalliance:jar:1.0 (compile) <img id="_1005242897" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_189887150', '_1005242897' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_189887150" style="display:none"><table class="bodyTable"><tr class="b"><th>AOP alliance</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>AOP Alliance</p>
+<p><b>URL: </b><a class="externalLink" href="http://aopalliance.sourceforge.net">http://aopalliance.sourceforge.net</a></p>
+<p><b>Project License: </b>Public Domain</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>jboss:javassist:jar:3.4.ga (compile) <img id="_2126103000" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1053484906', '_2126103000' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1053484906" style="display:none"><table class="bodyTable"><tr class="b"><th>Javassist</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Javassist (Java programming assistant) is a load-time reflective system for Java.</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.jboss.org/products/javassist">http://www.jboss.org/products/javassist</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&amp;content-type=text/html">MPL 1.1</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>ognl:ognl:jar:2.6.9-patch-20070908 (compile) <img id="_175303272" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_811050264', '_175303272' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_811050264" style="display:none"><table class="bodyTable"><tr class="b"><th>OGNL</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Patch for OGNL version 2.6.9 (http://www.ognl.org/)</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_345628436" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_782474354', '_345628436' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_782474354" style="display:none"><table class="bodyTable"><tr class="b"><th>Logging</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>org.apache.poi:poi:jar:3.0-FINAL (compile) <img id="_1139834401" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_997298444', '_1139834401' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_997298444" style="display:none"><table class="bodyTable"><tr class="b"><th>Jakarta POI</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Jakarta POI - Java API To Access Microsoft Format Files</p>
+<p><b>URL: </b><a class="externalLink" href="http://jakarta.apache.org/poi/">http://jakarta.apache.org/poi/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_29245495" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_573218574', '_29245495' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_573218574" style="display:none"><table class="bodyTable"><tr class="b"><th>Logging</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>net.sf.ehcache:ehcache:jar:1.6.2 (compile) <img id="_925406520" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1635915122', '_925406520' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1635915122" style="display:none"><table class="bodyTable"><tr class="b"><th>Ehcache Core</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Ehcache is a widely used, pure Java, distributed in-process cache</p>
+<p><b>URL: </b><a class="externalLink" href="http://ehcache.sf.net/ehcache">http://ehcache.sf.net/ehcache</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://ehcache.sourceforge.net/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>commons-lang:commons-lang:jar:2.1 (compile) <img id="_2112874056" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1638411615', '_2112874056' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1638411615" style="display:none"><table class="bodyTable"><tr class="b"><th>Lang</th>
+</tr>
+<tr class="a"><td><p><b>Description: </b>Commons.Lang, a package of Java utility classes for the
     classes that are in java.lang's hierarchy, or are considered to be so
-    standard as to justify existence in java.lang.</td><td>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</td></tr></table></div><div class="section"><h2>Project Transitive Dependencies</h2><table class="bodyTable"><caption>The following is a list of transitive dependencies for this project. Transitive dependencies are the dependencies of the project dependencies:</caption><tr class="b"><th>GroupId</th><th>ArtifactId</th><th>Version</th><th>Description</th><th>URL</th></tr><tr class="a"><td>ognl</td><td>ognl</td><td>2.6.5</td><td>-</td><td>-</td></tr><tr class="b"><td>commons-logging</td><td>commons-logging</td><td>1.0.4</td><td>Commons Logging is a thin adapter allowing configurable bridging to other,
-    well known logging systems.</td><td><a href="http://jakarta.apache.org/commons/logging/">http://jakarta.apache.org/commons/logging/</a></td></tr><tr class="a"><td>jboss</td><td>javassist</td><td>3.0</td><td>-</td><td>-</td></tr><tr class="b"><td>commons-collections</td><td>commons-collections</td><td>2.1</td><td>Commons Collections</td><td>-</td></tr><tr class="a"><td>poi</td><td>poi-2.5.1-final</td><td>20040804</td><td>-</td><td>-</td></tr><tr class="b"><td>org.seasar.container</td><td>s2-framework</td><td>2.3.14</td><td>DI Container with AOP</td><td><a href="http://s2container.seasar.org/">http://s2container.seasar.org/</a></td></tr></table></div>
+    standard as to justify existence in java.lang.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section"><h2>Licenses</h2>
+<p><b>Public Domain: </b>AOP alliance</p>
+<p><b>Unknown: </b>OGNL, Unnamed - org.apache.geronimo.specs:geronimo-j2ee_1.4_spec:jar:1.0</p>
+<p><b>MPL 1.1: </b>Javassist</p>
+<p><b>Common Public License Version 1.0: </b>JUnit</p>
+<p><b>The Apache Software License, Version 2.0: </b>Ehcache Core, Jakarta POI, Lang, Logging, Seasar2 Extension, Seasar2 Framework, s2caching</p>
+</div>
+<div class="section"><h2>Dependency File Details</h2>
+<table class="bodyTable"><tbody><tr class="b"><th align="left">Filename</th>
+<th align="right">Size</th>
+<th align="right">Entries</th>
+<th align="right">Classes</th>
+<th align="right">Packages</th>
+<th align="center">JDK Rev</th>
+<th align="center">Debug</th>
+</tr>
+<tr class="a"><td align="left">aopalliance-1.0.jar</td>
+<td align="right">4.36 kB</td>
+<td align="right">15</td>
+<td align="right">9</td>
+<td align="right">2</td>
+<td align="center">1.3</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">commons-lang-2.1.jar</td>
+<td align="right">202.85 kB</td>
+<td align="right">125</td>
+<td align="right">110</td>
+<td align="right">8</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">commons-logging-1.1.jar</td>
+<td align="right">51.67 kB</td>
+<td align="right">34</td>
+<td align="right">25</td>
+<td align="right">2</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">javassist-3.4.ga.jar</td>
+<td align="right">459.97 kB</td>
+<td align="right">279</td>
+<td align="right">262</td>
+<td align="right">15</td>
+<td align="center">1.2</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">junit-3.8.1.jar</td>
+<td align="right">118.23 kB</td>
+<td align="right">119</td>
+<td align="right">100</td>
+<td align="right">6</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">ehcache-1.6.2.jar</td>
+<td align="right">198.28 kB</td>
+<td align="right">138</td>
+<td align="right">113</td>
+<td align="right">14</td>
+<td align="center">1.5</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">ognl-2.6.9-patch-20070908.jar</td>
+<td align="right">163.08 kB</td>
+<td align="right">122</td>
+<td align="right">114</td>
+<td align="right">1</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">geronimo-j2ee_1.4_spec-1.0.jar</td>
+<td align="right">2.11 MB</td>
+<td align="right">2,476</td>
+<td align="right">2,297</td>
+<td align="right">88</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">poi-3.0-FINAL.jar</td>
+<td align="right">1.69 MB</td>
+<td align="right">1,237</td>
+<td align="right">1,169</td>
+<td align="right">54</td>
+<td align="center">1.3</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">s2-extension-2.4.34.jar</td>
+<td align="right">377.93 kB</td>
+<td align="right">383</td>
+<td align="right">305</td>
+<td align="right">45</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">s2-framework-2.4.34.jar</td>
+<td align="right">640.52 kB</td>
+<td align="right">615</td>
+<td align="right">546</td>
+<td align="right">43</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><th align="left">Total</th>
+<th align="right">Size</th>
+<th align="right">Entries</th>
+<th align="right">Classes</th>
+<th align="right">Packages</th>
+<th align="center">JDK Rev</th>
+<th align="center">Debug</th>
+</tr>
+<tr class="a"><td align="right">11</td>
+<td align="right">5.96 MB</td>
+<td align="right">5,543</td>
+<td align="right">5,050</td>
+<td align="right">278</td>
+<td align="center">1.5</td>
+<td align="right">11</td>
+</tr>
+<tr class="b"><td align="right">compile: 9</td>
+<td align="right">compile: 3.74 MB</td>
+<td align="right">compile: 2,948</td>
+<td align="right">compile: 2,653</td>
+<td align="right">compile: 184</td>
+<td align="center">-</td>
+<td align="right">compile: 9</td>
+</tr>
+<tr class="a"><td align="right">test: 1</td>
+<td align="right">test: 118.23 kB</td>
+<td align="right">test: 119</td>
+<td align="right">test: 100</td>
+<td align="right">test: 6</td>
+<td align="center">-</td>
+<td align="right">test: 1</td>
+</tr>
+<tr class="b"><td align="right">provided: 1</td>
+<td align="right">provided: 2.11 MB</td>
+<td align="right">provided: 2,476</td>
+<td align="right">provided: 2,297</td>
+<td align="right">provided: 88</td>
+<td align="center">-</td>
+<td align="right">provided: 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h2>Dependency Repository Locations</h2>
+<table class="bodyTable"><tbody><tr class="a"><th align="left">Repo ID</th>
+<th align="left">URL</th>
+<th align="center">Release</th>
+<th align="center">Snapshot</th>
+</tr>
+<tr class="b"><td align="left">apache.snapshots</td>
+<td align="left"><a class="externalLink" href="http://people.apache.org/repo/m2-snapshot-repository">http://people.apache.org/repo/m2-snapshot-repository</a></td>
+<td align="center">-</td>
+<td align="center">Yes</td>
+</tr>
+<tr class="a"><td align="left">maven.seasar.org</td>
+<td align="left"><a class="externalLink" href="http://maven.seasar.org/maven2">http://maven.seasar.org/maven2</a></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr class="b"><td align="left">central</td>
+<td align="left"><a class="externalLink" href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a></td>
+<td align="center">Yes</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<p>Repository locations for each of the Dependencies.</p>
+<table class="bodyTable"><tbody><tr class="a"><th align="left">Artifact</th>
+<th align="center">apache.snapshots</th>
+<th align="center">maven.seasar.org</th>
+<th align="center">central</th>
+</tr>
+<tr class="b"><td align="left">aopalliance:aopalliance:jar:1.0</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">commons-lang:commons-lang:jar:2.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">commons-logging:commons-logging:jar:1.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/commons-logging/commons-logging/1.1/commons-logging-1.1.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">jboss:javassist:jar:3.4.ga</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/jboss/javassist/3.4.ga/javassist-3.4.ga.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">junit:junit:jar:3.8.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">net.sf.ehcache:ehcache:jar:1.6.2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/1.6.2/ehcache-1.6.2.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">ognl:ognl:jar:2.6.9-patch-20070908</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://maven.seasar.org/maven2/ognl/ognl/2.6.9-patch-20070908/ognl-2.6.9-patch-20070908.jar"><img alt="Found at http://maven.seasar.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">org.apache.geronimo.specs:geronimo-j2ee_1.4_spec:jar:1.0</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-j2ee_1.4_spec/1.0/geronimo-j2ee_1.4_spec-1.0.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">org.apache.poi:poi:jar:3.0-FINAL</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://repo1.maven.org/maven2/org/apache/poi/poi/3.0-FINAL/poi-3.0-FINAL.jar"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">org.seasar.container:s2-extension:jar:2.4.34</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://maven.seasar.org/maven2/org/seasar/container/s2-extension/2.4.34/s2-extension-2.4.34.jar"><img alt="Found at http://maven.seasar.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">org.seasar.container:s2-framework:jar:2.4.34</td>
+<td align="center">-</td>
+<td align="center"><a class="externalLink" href="http://maven.seasar.org/maven2/org/seasar/container/s2-framework/2.4.34/s2-framework-2.4.34.jar"><img alt="Found at http://maven.seasar.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><th align="left">Total</th>
+<th align="center">apache.snapshots</th>
+<th align="center">maven.seasar.org</th>
+<th align="center">central</th>
+</tr>
+<tr class="b"><td align="left">11 (compile: 9, test: 1, provided: 1)</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 </div><!-- article -->
 
 </div><!-- contents_center -->
@@ -172,7 +664,7 @@
 <div id="footer">
 <address>  &copy; Copyright
   
-          2006-2007,
+          2006-2010,
     
           The Seasar Project and the others. All rights reserved.
       </address>
