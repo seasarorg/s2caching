@@ -17,6 +17,17 @@ public class CallCacheInterceptorTest extends S2TestCase {
         	return value;
         }
         
+        public Object getObject(final int value) {
+        	hoge += value;
+        	return new Object() {
+        		final int val = hoge;
+        		@Override
+        		public String toString() {
+        			return "" + val;
+        		}
+        	};
+        }
+        
         public String getValue() {
             hoge=hoge+1;
             return "value";
@@ -75,6 +86,12 @@ public class CallCacheInterceptorTest extends S2TestCase {
         assertEquals(900, mock.hoge);
     }
 
+    public void testReturnTypeNotSerializable() throws Exception {
+    	TestClass mock = createCachedMock();
+    	
+    	assertEquals("100", mock.getObject(100).toString());
+    }
+    
     public void testSingleInstanceCache() throws IOException, ClassNotFoundException {
         TestClass mock = createCachedMock();
 
@@ -101,7 +118,7 @@ public class CallCacheInterceptorTest extends S2TestCase {
     }
 
 	private TestClass createCachedMock() {
-		Pointcut pointcut = new PointcutImpl(new String[]{"getValue", "getLong"});
+		Pointcut pointcut = new PointcutImpl(new String[]{"getValue", "getLong", "getObject"});
         CallCacheInterceptor interceptor = (CallCacheInterceptor) getComponent("callCache");
         Aspect aspect = new AspectImpl(interceptor, pointcut);
         AopProxy aopProxy = new AopProxy(TestClass.class, new Aspect[]{aspect});

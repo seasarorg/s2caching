@@ -98,7 +98,8 @@ public class CallCacheInterceptor extends AbstractInterceptor {
     }
 
     protected boolean isReturnTypeSerializable(MethodInvocation invocation) {
-        return ((invocation.getMethod().getReturnType()) instanceof Serializable);
+        Class returnType = invocation.getMethod().getReturnType();
+    	return (returnType.isPrimitive() || Serializable.class.isAssignableFrom(returnType));
     }
 
     protected boolean isAllArgumentsSerializable(MethodInvocation invocation) {
