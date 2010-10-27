@@ -73,16 +73,14 @@
 					</configuration>
 				</plugin>
 
-				<!-- 
-					<plugin>
+				<plugin>
 					<artifactId>maven-site-plugin</artifactId>
 					<configuration>
-					<locales>en,ja</locales>
+					<locales>ja</locales>
 					<inputEncoding>UTF-8</inputEncoding>
 					<outputEncoding>UTF-8</outputEncoding>
 					</configuration>
-					</plugin>   
-				-->
+				</plugin>   
 
 				<plugin>
 					<artifactId>maven-release-plugin</artifactId>

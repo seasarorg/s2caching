@@ -8,14 +8,14 @@
 
 S2Caching releases
 ~~~~~~~~~~~~
-  2010/06/03現在 stable リリースはありません
+  2010/10/28現在 stable リリースはありません
   
 S2Caching snapshots
 ~~~~~~~~~~~~
-  2010/06/03 snapshot 
+  2010/10/28 snapshot 
   
-  {{s2caching-0.1-SNAPSHOT.jar}}
+  {{{./s2caching-0.1-SNAPSHOT.jar}s2caching-0.1-SNAPSHOT.jar}}
   
-  {{s2caching-0.1-SNAPSHOT-sources.jar}}
+  {{{./s2caching-0.1-SNAPSHOT-sources.jar}s2caching-0.1-SNAPSHOT-sources.jar}}
   
   

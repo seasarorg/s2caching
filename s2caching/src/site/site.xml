@@ -3,23 +3,29 @@
   <skin>
     <groupId>org.seasar.project</groupId>
     <artifactId>seasar-skin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.3</version>
   </skin>
+	<bannerLeft>
+		<name>Seasar Banner</name>
+		<src>http://www.seasar.org/images/seasar_banner.gif
+		</src>
+		<href>http://www.seasar.org/</href>
+	</bannerLeft>   
   <bannerRight>
     <name>s2caching</name>
     <src>http://s2caching.sandbox.seasar.org/banner.jpg</src>
     <href>http://s2caching.sandbox.seasar.org</href>
   </bannerRight>
   <body>
-    <links>
+     <links>
       <item name="Top" href="http://www.seasar.org/" />
       <item name="Home" href="http://s2caching.sandbox.seasar.org/" />
-    </links>
+    </links> 
 <!-- 
     <menu ref="reports" />
     -->
-	<menu name="S2Caching">
-	  <item name="Introduction" href="index.html"/>
+	<menu name="S2Caching" inherit="top">
+	  <item name="Introduction" href="about.html"/>
 	  <item name="Download" href="download.html"/>	  
 	</menu>  
 	
