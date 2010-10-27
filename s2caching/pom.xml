@@ -187,7 +187,7 @@
 		<site>
 			<id>maven.seasar.org</id>
 			<url>
-				dav:https://www.seasar.org/site/sandbox/s2caching/public_html
+				dav:https://www.seasar.org/site/sandbox/s2caching
 			</url>
 		</site>
 	</distributionManagement>
